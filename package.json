@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "express": "^4.21.1",
+    "http": "^0.0.1-security",
+    "http-server": "^14.1.1",
+    "three": "^0.169.0"
+  },
+  "name": "showcase-room",
+  "version": "1.0.0",
+  "description": "HTML Based website for me to host my 3d models and shwocase them.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {}
+}

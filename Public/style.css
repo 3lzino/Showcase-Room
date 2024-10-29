@@ -1,0 +1,58 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Hide overflow on body */
+  height: 100vh; /* Full viewport height */
+  background-color: #333; /* Background color */
+  display: flex; /* Flexbox layout for centering */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+}
+
+.scrolling-frame {
+  display: flex; /* Use flexbox to layout the model frames in a row */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  overflow-y: hidden; /* Hide vertical overflow */
+  width: 80vw; /* Set width of the scrolling frame */
+  height: 300px; /* Fixed height for the scrolling frame */
+  scroll-snap-type: x mandatory; /* Enable scroll snapping */
+  align-items: center; /* Center items vertically within the scrolling frame */
+  padding: 10px 0; /* Optional: Add padding to the top and bottom */
+  border: 2px solid #ccc; /* Optional: border for visibility */
+  scroll-behavior: smooth; /* Enable smooth scrolling */
+}
+
+/* Style for individual model frames */
+.model-frame {
+  width: 300px; /* Fixed width for each model frame */
+  height: 100%; /* Match height to scrolling frame */
+  background-color: #222; /* Background color for model frames */
+  margin: 0 10px; /* Space around each model frame (left and right) */
+  scroll-snap-align: center; /* Snap alignment for scroll */
+  border: 1px solid #ccc; /* Optional: border for visibility */
+}
+
+/* Custom scrollbar styles for WebKit browsers (Chrome, Safari) */
+.scrolling-frame::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+  height: 12px; /* Height of the scrollbar for horizontal scrolling */
+}
+
+.scrolling-frame::-webkit-scrollbar-track {
+  background: transparent; /* Background of the scrollbar track (hidden) */
+}
+
+.scrolling-frame::-webkit-scrollbar-thumb {
+  background: #888; /* Color of the scrollbar thumb */
+  border-radius: 6px; /* Rounded corners for the scrollbar thumb */
+}
+
+.scrolling-frame::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color when hovered over */
+}
+
+/* Custom scrollbar styles for Firefox */
+.scrolling-frame {
+  scrollbar-width: thin; /* Thin scrollbar */
+  scrollbar-color: #888 transparent; /* Thumb color and track color */
+}
