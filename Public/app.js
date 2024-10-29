@@ -19,7 +19,7 @@ debugContainer.style.color = 'white';
 document.body.appendChild(debugContainer); // Append to body
 
 // Initialize models in their respective frames
-function initModelFrame(containerId, modelPath, customScale = null, customRotation = null) {
+function initModelFrame(containerId, modelPath) {
   const container = document.getElementById(containerId);
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
@@ -37,15 +37,8 @@ function initModelFrame(containerId, modelPath, customScale = null, customRotati
   loader.load(modelPath, function (gltf) {
     model = gltf.scene;
 
-    // Set default or custom scale for each model
-    const baseScale = 1.5; // Default scale factor
-    const scale = customScale || baseScale;
-    model.scale.set(scale, scale, scale);
-
-    // Set default or custom rotation for each model
-    const defaultRotation = { x: 0, y: Math.PI / 4, z: 0 };
-    const rotation = customRotation || defaultRotation;
-    model.rotation.set(rotation.x, rotation.y, rotation.z);
+    // Apply the model's original scale from Blender
+    model.scale.set(1, 1, 1); // Use the original export scale
 
     // Center the model
     const box = new THREE.Box3().setFromObject(model);
@@ -140,12 +133,6 @@ function animate(scene, camera, renderer) {
   renderer.render(scene, camera); // Render the scene
 }
 
-// Initialize model frames with their respective models, scales, and rotations
-initModelFrame('model1', '../assets/PhantomBlade.glb', 1.5, { x: -0.05, y: Math.PI / 0, z: 0 });
-initModelFrame('model2', '../assets/gem_boo.glb', 1.2, { x: Math.PI / -0.85, y: -1.59, z: Math.PI / -0.79 });
-initModelFrame('model3', '../assets/PhantomBlade.glb', 1.5, { x: Math.PI / 4, y: 0, z: 0 });
-initModelFrame('model4', '../assets/PhantomBlade.glb', 1.8, { x: 0, y: Math.PI / 3, z: 0 });
-initModelFrame('model5', '../assets/PhantomBlade.glb', 2, { x: 0, y: Math.PI / 2, z: 0 });
-initModelFrame('model6', '../assets/gem_boo.glb', 1.2, { x: Math.PI / 6, y: 0, z: Math.PI / 4 });
-initModelFrame('model7', '../assets/PhantomBlade.glb', 1.5, { x: Math.PI / 4, y: 0, z: Math.PI / 4 });
-initModelFrame('model8', '../assets/gem_boo.glb', 1.5, { x: Math.PI / -4, y: 0, z: Math.PI / 4 });
+// Initialize model frames with their respective models
+initModelFrame('model1', '../assets/PhantomBlade.glb');
+initModelFrame('model2', '../assets/gem_boo.glb');
