@@ -141,12 +141,11 @@ function animate(scene, camera, renderer) {
 }
 
 // Initialize model frames with their respective models, scales, and rotations
-initModelFrame('model1', '/assets/PhantomBlade.glb', 1.5 , { x: -0.05, y: Math.PI / 0, z: 0 });
-initModelFrame('model2', '/assets/gem_boo.glb', 1.2, { x: Math.PI / -0.85, y: -1.59, z: Math.PI / -0.79 });
-initModelFrame('model3', '/assets/PhantomBlade.glb', 1.5, { x: Math.PI / 4, y: 0, z: 0 });
-initModelFrame('model4', '/assets/PhantomBlade.glb', 1.8, { x: 0, y: Math.PI / 3, z: 0 });
-initModelFrame('model5', '/assets/PhantomBlade.glb', 2, { x: 0, y: Math.PI / 2, z: 0 });
-initModelFrame('model6', '/assets/gem_boo.glb', 1.2, { x: Math.PI / 6, y: 0, z: Math.PI / 4 });
-initModelFrame('model7', '/assets/PhantomBlade.glb', 1.5, { x: Math.PI / 4, y: 0, z: 0 });
-initModelFrame('model8', '/assets/PhantomBlade.glb', 1.8, { x: 0, y: Math.PI / 3, z: 0 });
-// Add more models as needed
+initModelFrame('model1', '../assets/PhantomBlade.glb', 1.5, { x: -0.05, y: Math.PI / 0, z: 0 });
+initModelFrame('model2', '../assets/gem_boo.glb', 1.2, { x: Math.PI / -0.85, y: -1.59, z: Math.PI / -0.79 });
+initModelFrame('model3', '../assets/PhantomBlade.glb', 1.5, { x: Math.PI / 4, y: 0, z: 0 });
+initModelFrame('model4', '../assets/PhantomBlade.glb', 1.8, { x: 0, y: Math.PI / 3, z: 0 });
+initModelFrame('model5', '../assets/PhantomBlade.glb', 2, { x: 0, y: Math.PI / 2, z: 0 });
+initModelFrame('model6', '../assets/gem_boo.glb', 1.2, { x: Math.PI / 6, y: 0, z: Math.PI / 4 });
+initModelFrame('model7', '../assets/PhantomBlade.glb', 1.5, { x: Math.PI / 4, y: 0, z: Math.PI / 4 });
+initModelFrame('model8', '../assets/gem_boo.glb', 1.5, { x: Math.PI / -4, y: 0, z: Math.PI / 4 });
